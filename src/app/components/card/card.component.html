@@ -1,0 +1,28 @@
+<ul class="container">
+    <li class="container-li" *ngFor="let product of products">
+        <div class="card">
+            <a class="grupo" [routerLink]="['productDetail',product._id]">
+                <div class="image">
+                <img [src]="product.urlImage" alt="">
+                </div>
+                <div class="name">
+                    <h5>{{product.name}}</h5>
+                </div>
+            </a>
+            <div class="description">
+                <p>{{ product.description}}</p>
+            </div>
+            <div class="preci">
+                <p>{{'$'+ product.price}}</p>
+            </div>
+            <div class="button-c-e">
+                <div class="compra">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <a href="" *ngIf="showBuyButton()">agregar al carrito</a>
+                </div>
+
+            </div>
+        </div>
+    </li>
+</ul>
+

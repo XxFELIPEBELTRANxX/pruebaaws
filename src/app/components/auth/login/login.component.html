@@ -1,0 +1,21 @@
+
+<section class="login">
+    <app-form [title]="titulo">
+    <form action="" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <div class="input-box">
+        <input  type="email" formControlName="email" placeholder="Email">
+        <i class='bx bxs-envelope r'></i>
+    </div>
+    <div  class="input-box">
+        <input type="password" formControlName="password" placeholder="Password">
+        <i class='bx bxs-lock-alt r'></i>
+    </div>
+
+    <button type="submit" class="btn">{{titulo}}</button>
+
+    <div class="register-link">
+        <p>{{text2}} : <a routerLink="/register">{{enlace}}</a></p>
+    </div>
+    </form>
+    </app-form>
+</section>

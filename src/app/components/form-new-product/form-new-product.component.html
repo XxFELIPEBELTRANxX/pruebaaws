@@ -1,0 +1,114 @@
+<section class="register">
+    <app-form [title]="titulo">
+        <form [formGroup]="registerformulario" (ngSubmit)="registerForm()">
+<!-- ------------------------------------------------------------------------------------------- -->
+            <div class="input-box">
+            <input type="text" formControlName="name" placeholder="nombre" >
+            <div class="error">
+            <!-- validar los estados del campo -->
+            <div class="valid-state"
+            *ngIf="registerformulario.get('name')?.invalid &&(registerformulario.get('name')?.dirty || registerformulario.get('name')?.touched)"
+            >
+                <!-- evaluar  las validaciones que hacemos sobre el campo -->
+                <small
+                *ngIf="registerformulario.get('name')?.errors ?.['required']"
+                >El nombre del producto es obligatorio</small>
+            </div>
+            </div>
+        </div> 
+
+
+        <div class="input-box">
+            <input type="text" formControlName="description" placeholder="description" >
+            <div class="error">
+            <!-- validar los estados del campo -->
+            <div class="valid-state"
+            *ngIf="registerformulario.get('description')?.invalid &&(registerformulario.get('description')?.dirty || registerformulario.get('description')?.touched)"
+            >
+                <!-- evaluar  las validaciones que hacemos sobre el campo -->
+    
+            </div>
+            </div>
+        </div> 
+
+
+
+        
+<!-- ---------------------------------------------------------------------------------------------------------- -->
+            
+            <div class="input-box">
+                <input type="text" formControlName="price" placeholder="valor">
+                <div class="error">
+                    <!-- validar los estados del campo -->
+            <div class="valid-state"
+            *ngIf="registerformulario.get('price')?.invalid &&(registerformulario.get('price')?.dirty || registerformulario.get('price')?.touched)"
+            >
+                <!-- evaluar  las validaciones que hacemos sobre el campo -->
+                <small
+                *ngIf="registerformulario.get('price')?.errors ?.['required']"
+                >El valor de el producto es obligatorio</small>
+
+                <small
+                *ngIf="registerformulario.get('price')?.errors ?.['min']"
+                >El  precio del producto no puede ser un valor negativo</small>
+
+                </div>
+            </div>
+            </div>
+
+<!-- ----------------------------------------------------------------------------------------------------------- -->
+
+            <div class="input-box">
+                <input type="number" formControlName="quantity" placeholder="cantidad">
+
+                <div class="error">
+                    <!-- validar los estados del campo -->
+            <div class="valid-state"
+            *ngIf="registerformulario.get('quantity')?.invalid &&(registerformulario.get('quantity')?.dirty || registerformulario.get('quantity')?.touched)"
+            >
+                <!-- evaluar  las validaciones que hacemos sobre el campo -->
+                <small
+                *ngIf="registerformulario.get('quantity')?.errors ?.['required']"
+                >El campo de cantidad es obligatorio</small>
+
+                <small
+                *ngIf="registerformulario.get('quantity')?.errors ?.['min']"
+                >La cantidad del producto no puede ser inferior a 1</small>
+
+                </div>
+            </div>
+                
+            </div>
+<!-- ------------------------------------------------------------------------------------------------------ -->
+
+        <div class="field">
+        <!-- <label for="">Categoria del Producto:</label><br> -->
+        <select class="select" formControlName="category" >
+        <option class="options" [value]="category.name" *ngFor="let category of categories">{{ category.name }}</option>
+        </select>
+        </div><br>
+
+
+            <div class="input-box">
+                <input type="text" formControlName="urlImage" placeholder="imagen" >
+
+                <div class="error">
+                    <!-- validar los estados del campo -->
+                    <div class="valid-state"
+                    *ngIf="registerformulario.get('urlImage')?.invalid &&(registerformulario.get('urlImage')?.dirty || registerformulario.get('urlImage')?.touched)"
+                    >
+                        <!-- evaluar  las validaciones que hacemos sobre el campo -->
+                        <small
+                        *ngIf="registerformulario.get('urlImage')?.errors ?.['required']"
+                        >la imagen es obligatoria</small>
+                    </div>
+                    </div> 
+            </div> 
+
+            <button type="submit" class="btn" [disabled]="registerformulario.invalid">Registrar Producto</button>
+
+            <button type="submit" class="btn" routerLink="/editformlist" >Lista de productos</button>
+
+        </form>
+    </app-form>
+</section>

@@ -1,0 +1,34 @@
+<section class="editform">
+    <app-form [title]="title">
+        <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+            <div class="input-box">
+                <input  type="text" formControlName="name" placeholder="name">
+            </div>
+
+            <div class="input-box">
+                <input  type="text" formControlName="description" placeholder="description">
+            </div>
+
+            <div class="input-box">
+                <input  type="number" formControlName="price" placeholder="price">
+            </div>
+
+            <div class="input-box">
+                <input  type="number" formControlName="quantity" placeholder="quantity">
+            </div>
+
+            <select formControlName="category" class="selectO" name="categor">
+                <option value="" selected disabled hidden>category</option>
+                <option value="" *ngFor="let category of categorys">{{category.name}}</option>
+            </select>
+
+            <div class="input-box">
+                <input  type="text" formControlName="urlImage" placeholder="urlImage">
+            </div>
+
+            <button type="submit" class="btn">{{title2}}</button>
+
+        </form>
+    </app-form>
+</section>

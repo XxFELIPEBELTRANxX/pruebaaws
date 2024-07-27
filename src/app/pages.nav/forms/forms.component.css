@@ -1,0 +1,11 @@
+.form{
+    background: url("https://assets.corsair.com/video/upload/f_auto,q_auto,so_0/akamai/hybris/homepage/refresh/CORSAIR_Header_2024_WQHD.jpg")no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    /* padding: 3rem 0 0 0; */
+}
+.video-background{
+    width: 100%;
+}

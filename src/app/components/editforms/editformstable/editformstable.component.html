@@ -1,0 +1,28 @@
+<table class="table">
+    <thead >
+        <tr class="file_one">
+            <th class="name">name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>quantity</th>
+            <th>category</th>
+            <th>button</th>
+        </tr>
+    </thead>
+    <tbody class="container">
+        <tr *ngFor="let product of products">
+            <td class="constiner-img">
+                <img [src]="product.urlImage" >
+            </td>
+
+            <td class="container-name"> {{product.name}}</td>
+            <td class="container-price"> {{product.price}}</td>
+            <td class="container-quantity"> {{product.quantity}}</td>
+            <td class="container-category"> {{product.category}}</td>
+            <td>
+                <a [routerLink]="['editform',product._id]" class="btn edit"> edit</a>
+                <a routerLink="" class="btn delete" >delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

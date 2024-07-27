@@ -1,0 +1,71 @@
+
+.table{
+    
+    width: 100%;
+    height: 100%;
+    max-width: 60%;
+    margin: 3rem 15rem;
+    border: 2px solid black;
+    
+}
+
+.file_one{
+    width: 10rem;
+    height: 5rem;
+}
+.container{
+    height: 4rem;
+}
+.constiner-img{
+    width: 10rem;
+
+    img{
+        width: 8rem;  
+        height: 8rem;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+    }
+}
+
+.container-name,
+.container-price,
+.container-quantity,
+.container-category{
+    text-align: center;
+}
+td.container-urlImage {
+    display: block;
+    width: 40rem;
+    height: 8rem;
+}
+
+.btn{
+    margin: .5rem;
+    padding: 2rem;
+    background-color: aquamarine;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.delete{
+    background: white;
+    border: 1px solid red;
+}
+
+a{
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
+@media (min-width:567px) {
+    .table{
+        width: 100%;
+        height: 100%;
+        max-width: 60%;
+        margin: 3rem 15rem;
+        border: 2px solid black;
+        
+    }
+}
+

@@ -1,0 +1,21 @@
+<div class="total_container">
+    <div class="text">
+        <h2>ShadowTech</h2>
+    </div>
+
+    <div class="conteiner">
+
+        <div class="img-p">
+            <img class="imagen" [src]="product[0].urlImage" alt="">
+        </div>
+
+        <div class="detalle_producto">
+            <h3>{{product[0].name}}</h3><br>
+            <p>{{product[0].description}}</p><br>
+            <h2>{{product[0].price}}</h2><br><br>
+
+            <a class="comprar" *ngIf="showBuyButtom()">Añadir al carrito</a>
+            
+        </div>
+    </div>
+</div>

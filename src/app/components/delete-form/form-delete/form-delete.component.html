@@ -1,0 +1,40 @@
+<section class="delete">
+    <app-form [title]="'Delete Product'">
+      <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+
+        <div class="input-box">
+          <input  type="text" formControlName="name" placeholder="name">
+      </div>
+
+      <div class="input-box">
+          <input  type="text" formControlName="description" placeholder="description">
+      </div>
+
+      <div class="input-box">
+          <input  type="number" formControlName="price" placeholder="price">
+      </div>
+
+      <div class="input-box">
+          <input  type="number" formControlName="quantity" placeholder="quantity">
+      </div>
+
+      <select formControlName="category" class="selectO" name="categor">
+          <option value="" selected disabled hidden>category</option>
+      </select>
+      <div class="input-box">
+          <input  type="text" formControlName="urlImage" placeholder="urlImage">
+      </div>
+
+        <!-- <div class="confirmation">
+          <h3>Confirm Delete</h3>
+          <p>Are you sure you want to delete this product?</p>
+        </div>
+        <div class="input-box">
+            <input type="text" formControlName="productId" placeholder="Product ID" readonly>
+          <input type="hidden" formControlName="productId">
+        </div> -->
+        <button type="submit" class="btn btn-danger">Delete Product</button>
+      </form>
+    </app-form>
+  </section>
+  

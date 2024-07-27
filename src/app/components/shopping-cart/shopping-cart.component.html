@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Shopping Cart</h2>
+    <form [formGroup]="shoppingCartForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="items">
+        <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="item">
+          <div class="form-group">
+            <label for="name{{i}}">Product Name:</label>
+            <input type="text" id="name{{i}}" formControlName="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="price{{i}}">Price:</label>
+            <input type="number" id="price{{i}}" formControlName="price" class="form-control" (input)="calculateTotal()">
+          </div>
+          <button type="button" class="btn btn-danger" (click)="removeItem(i)">Remove</button>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addItem()">Add Product</button>
+      <hr>
+      <div class="total">
+        <h4>Total: {{ total | currency }}</h4>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="shoppingCartForm.invalid">Checkout</button>
+    </form>
+  </div>
+  
